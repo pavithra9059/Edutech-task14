@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Secure Registration</title>
+</head>
+
+<body>
+
+<h2>User Registration</h2>
+
+<form id="form">
+
+<input
+type="text"
+id="name"
+placeholder="Name"
+required>
+
+<br><br>
+
+<input
+type="email"
+id="email"
+placeholder="Email"
+required>
+
+<br><br>
+
+<input
+type="password"
+id="password"
+placeholder="Password"
+required>
+
+<br><br>
+
+<button>
+Register
+</button>
+
+</form>
+
+<script>
+
+document
+.getElementById("form")
+.addEventListener(
+"submit",
+function(e){
+
+e.preventDefault();
+
+const password =
+document
+.getElementById(
+"password"
+).value;
+
+const strongPassword =
+/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])/;
+
+if(
+!strongPassword.test(password)
+){
+alert(
+"Weak Password"
+);
+return;
+}
+
+alert(
+"Client Validation Passed"
+);
+
+});
+</script>
+
+</body>
+</html>
